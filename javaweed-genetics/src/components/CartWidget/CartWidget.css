@@ -1,0 +1,5 @@
+img {
+    display: flex;
+    padding: 0;
+    flex-direction: left
+}
