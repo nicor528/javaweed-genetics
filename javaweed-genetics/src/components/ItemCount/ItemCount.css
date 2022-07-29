@@ -1,0 +1,54 @@
+.itemcount2{
+    margin-left:190px;
+    border-style: solid;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-self: flex-end;
+    border-color:black;
+    width: 210px; 
+    height: 45px; 
+}
+
+.itemcount{
+    display:flex;
+    
+    border-color:red;
+    width: 600px;; 
+    height: 100px; 
+    border-style: solid;
+
+    align-content: flex-end
+}
+
+.boton_sumar{
+    text-align: center;
+    height: 40px; 
+
+}
+
+.contador{
+    align-self: flex-end;
+    text-align: center;
+    width: 50px;
+
+    height: 15px; 
+
+}
+
+.boton_restar{
+    text-align: left;
+    height: 40px; 
+ 
+}
+
+.boton_agregar_carrito{
+    width: 150px;
+    height: 40px;
+
+}
+
+.prueba{
+    display: flex;
+    flex-direction: row;
+}

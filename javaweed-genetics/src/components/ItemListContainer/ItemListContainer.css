@@ -1,6 +1,9 @@
-h3{
+.itemlistcontainer{
+    padding:200px;
+    display: flex;
     border-width: 5px;
     border-color: #f00;
-    padding: 40px;
     border-style: solid;
+    height: 200px;
+    align-content: center;
 }

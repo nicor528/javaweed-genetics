@@ -1,1 +1,7 @@
 Kleyberth (programa para organizar el proyecto)
+
+git add .
+
+git commit -m”nombre-commit”
+
+git push -u origin master
