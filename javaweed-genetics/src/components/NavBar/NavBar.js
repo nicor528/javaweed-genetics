@@ -8,9 +8,9 @@ import "../CartWidget/CartWidget.css"
 function NavBar() {
   return (
     <Navbar fixed="top" bg="light" expand="lg">
-    <div>
-    <CartWidget></CartWidget>
-    </div>
+        <div>
+        <CartWidget></CartWidget>
+        </div>
       <Container>
         <Navbar.Brand href="#home">JavaWeed Genetics</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

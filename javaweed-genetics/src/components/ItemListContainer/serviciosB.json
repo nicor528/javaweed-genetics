@@ -1,0 +1,9 @@
+[
+    {"id": 1, "servicio": "Corte", "valor": 800},
+    {"id": 2, "servicio": "Barba", "valor": 500},
+    {"id": 3, "servicio": "Color", "valor": 2000},
+    {"id": 4, "servicio": "Corte y barba", "valor": 1000},
+    {"id": 5, "servicio": "Corte y color", "valor": 2800},
+    {"id": 6, "servicio": "Barba y color", "valor": 2500},
+    {"id": 7, "servicio": "Corte, barba y color", "valor": 2800}
+]

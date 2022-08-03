@@ -9,9 +9,7 @@ function App() {
       <header>
       <NavBar></NavBar>
       </header>
-      <ItemListContainer>
-      </ItemListContainer>
-
+        <ItemListContainer/>
     </div>
   );
 }

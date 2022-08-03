@@ -1,0 +1,27 @@
+
+[
+    {
+        "id": 1,
+        "titulo": "Voladora",
+        "precio": "2000",
+        "imagen": "URL"
+    },
+    {
+        "id": 2,
+        "titulo": "Del barrio",
+        "precio": "2000",
+        "imagen": "URL"
+    },
+    {
+        "id": 3,
+        "titulo": "Nevadita",
+        "precio": "2000",
+        "imagen": "URL"
+    },
+    {
+        "id": 4,
+        "titulo": "Uritorco",
+        "precio": "2000",
+        "imagen": "URL"
+    }
+]

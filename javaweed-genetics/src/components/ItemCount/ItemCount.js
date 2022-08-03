@@ -5,7 +5,7 @@ import { useState } from "react";
 function ItemCount(props){
 
     const [contador, setContador] = useState(1)
-    let stock = props.Stock;
+    let stock = props.stock;
 
     function sumar_contador(){
         if (contador < stock) {
@@ -29,13 +29,13 @@ function ItemCount(props){
 
     return(
         <div className="itemcount" >
-            <div className="itemcount2">
+            
                 <input type="button" value="+" className="boton_sumar" onClick={sumar_contador} ></input>
-                <p className="contador">{contador} </p>
+                <span className="contador">{contador} </span>
                 <input type="button" value="-" className="boton_restar" onClick={restar_contador}></input>
                 <input type="button" value="Agregar al carrito" className="boton_agregar_carrito" 
                 onClick={agregar_a_carrito}></input>
-            </div>
+            
         </div>
 
     )

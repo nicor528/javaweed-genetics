@@ -1,0 +1,11 @@
+.itemlist{
+    padding-top: 50px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    width: 1200px;
+    height: 500px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
