@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
 import "../CartWidget/CartWidget.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function NavBar() {
   return (
@@ -12,22 +13,26 @@ function NavBar() {
         <CartWidget></CartWidget>
         </div>
       <Container>
-        <Navbar.Brand href="#home">JavaWeed Genetics</Navbar.Brand>
+        <Navbar.Brand href="/">JavaWeed Genetics</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            <NavDropdown title="Semillas" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/">Sativas</NavDropdown.Item>
+              <NavDropdown.Item href="/">
+                Indicas
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="/">Hibridas</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Capsulas para vapos" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/">Sativos</NavDropdown.Item>
+              <NavDropdown.Item href="/">
+                Indicos
               </NavDropdown.Item>
+              <NavDropdown.Item href="/">Hibridos</NavDropdown.Item>
+
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

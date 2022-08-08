@@ -14,20 +14,23 @@ const produ = [
         "titulo": "Voladora",
         "precio": "2000",
         "stock": 5,
-        "imagen": voladora
+        "imagen": voladora,
+        "tipo": "Indica"
     },
     {
         "id": 2,
         "titulo": "Del barrio",
         "precio": "2000",
         "stock": 5,
-        "imagen": delBarrio
+        "imagen": delBarrio,
+        "tipo": "Indica"
     },
     {
         "id": 3,
         "titulo": "Nevadita",
         "precio": "2000",
         "stock": 5,
+        "tipo": "Sativa",
         "imagen": nevadita
     },
     {
@@ -35,6 +38,7 @@ const produ = [
         "titulo": "Uritorco",
         "precio": "2000",
         "stock": 5,
+        "tipo": "Hibrida",
         "imagen": uritorco
     }
 ]

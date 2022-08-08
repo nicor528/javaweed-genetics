@@ -9,3 +9,5 @@ git commit -m”nombre-commit”
 git push -u origin master
 
 dummyapi
+
+important en css para pisar clases de bootstrap

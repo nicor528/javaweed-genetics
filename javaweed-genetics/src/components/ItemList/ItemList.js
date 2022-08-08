@@ -8,7 +8,7 @@ function ItemList({products}){
             {products.map(data =>{
                 return(
                     <Item
-                        ID = {data.id}
+                        id = {data.id}
                         titulo = {data.titulo}
                         precio = {data.precio}
                         stock = {data.stock}
