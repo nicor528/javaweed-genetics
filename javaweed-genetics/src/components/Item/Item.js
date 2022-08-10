@@ -11,9 +11,9 @@ function Item({id, titulo, precio, stock, imagen}){
     }
 
     return(
-        <div className="item">
+        <div className="item" key={id}>
             <span> {titulo}</span>
-            <img width="200px" height="200px" src={imagen} />
+            <img width="200px" height="200px" src={`https://raw.githubusercontent.com/nicor528/javaweed-genetics/master/javaweed-genetics/public/img/${imagen}`} />
             <input width="20px" type="button" value="Ver mas info" onClick={verdetalle} />
             <ItemCount stock={stock}/>
         </div>

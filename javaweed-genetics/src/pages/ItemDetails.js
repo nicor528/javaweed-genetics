@@ -5,9 +5,7 @@ export default function ItemDetails(){
     return(
         <div>
             <NavBar></NavBar>
-            <div>
             <ItemDetailsConteiner></ItemDetailsConteiner>
-            </div>
         </div>
     )
 }

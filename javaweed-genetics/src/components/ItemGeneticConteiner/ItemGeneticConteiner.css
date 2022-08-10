@@ -1,11 +1,11 @@
-.itemlistcontainer{
-    margin-top: 0px;
+.itemgeneticcontainer{
+    margin-top: 50px;
    
     display: flex;
     border-width: 5px;
     border-color: #f00;
     border-style: solid;
-    width: 1000px;
+    width: 2000px;
     height: 500px;
     flex-direction: row;
     align-items: flex-end;
