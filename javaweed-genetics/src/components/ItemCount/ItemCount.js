@@ -1,8 +1,10 @@
 import './ItemCount.css'
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 
 function ItemCount(props){
+
+    const [agregado, setAgregado] = useState(false);
 
     const [contador, setContador] = useState(1)
     let stock = props.stock;
@@ -24,9 +26,12 @@ function ItemCount(props){
             alert("No hay Stock del producto")
         }else{
             alert("La cantidad seleccionada es: " + contador);
-        }
-    }
+            setAgregado(true);
+        }   }
 
+
+ 
+    if(!agregado){
     return(
         <div className="itemcount" >
             
@@ -37,8 +42,12 @@ function ItemCount(props){
                 onClick={agregar_a_carrito}></input>
             
         </div>
-
-    )
+    )}
+    else{
+        return(
+            <Link to='/cart'>Ir al carrito</Link>
+        )
+    }
 }
 
 export default ItemCount;
