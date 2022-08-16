@@ -2,10 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from '../CartWidget/CartWidget';
-import "../CartWidget/CartWidget.css"
+import Logo from '../Logo/Logo';
+import "../Logo/Logo.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import CartItem from '../CartItem/CartItem';
 
 function NavBar() {
 
@@ -26,7 +27,7 @@ function NavBar() {
   return (
     <Navbar fixed="top" bg="light" expand="lg">
         <div>
-        <CartWidget></CartWidget>
+        <Logo></Logo>
         </div>
       <Container>
         <Navbar.Brand href="/">JavaWeed Genetics</Navbar.Brand>
@@ -50,6 +51,9 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <div>
+        <CartItem></CartItem>
+        </div>
     </Navbar>
   );
 }
