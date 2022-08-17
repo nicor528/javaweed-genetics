@@ -2,12 +2,12 @@ import './ItemCount.css'
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
-function ItemCount(props){
+function ItemCount({Stock, addItem}){
 
     const [agregado, setAgregado] = useState(false);
 
     const [contador, setContador] = useState(1)
-    let stock = props.stock;
+    let stock = Stock;
 
     function sumar_contador(){
         if (contador < stock) {
@@ -22,10 +22,10 @@ function ItemCount(props){
     }}
 
     function agregar_a_carrito(){
-        if(stock==0){
+        if(stock < contador){
             alert("No hay Stock del producto")
         }else{
-            alert("La cantidad seleccionada es: " + contador);
+            addItem(contador);
             setAgregado(true);
         }   }
 

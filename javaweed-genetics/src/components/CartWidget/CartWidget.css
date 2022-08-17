@@ -1,0 +1,9 @@
+.CartWidget{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.CartWidget .material-symbols-outlined {
+    color: antiquewhite;
+}

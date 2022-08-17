@@ -6,13 +6,12 @@ import Logo from '../Logo/Logo';
 import "../Logo/Logo.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import CartItem from '../CartItem/CartItem';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
 
   const navegar = useNavigate()
   const goSativa = () => {
-    const sativa = "sativa"
     navegar(`/sativa`)
   }
 
@@ -24,18 +23,21 @@ function NavBar() {
     navegar(`/hibrida`)
   }
 
+  const goHome = () => {
+    navegar(`/`)
+  }
+
   return (
     <Navbar fixed="top" bg="light" expand="lg">
         <div>
         <Logo></Logo>
         </div>
       <Container>
-        <Navbar.Brand href="/">JavaWeed Genetics</Navbar.Brand>
+        <Navbar.Brand onClick={goHome}>JavaWeed Genetics</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Inicio</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link onClick={goHome}>Inicio</Nav.Link>
             <NavDropdown title="RiquiGenetics" id="basic-nav-dropdown">
               <NavDropdown.Item onClick={goSativa}>Sativas</NavDropdown.Item>
               <NavDropdown.Item onClick={goIndica}>Indicas</NavDropdown.Item>
@@ -51,9 +53,9 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <div>
-        <CartItem></CartItem>
-        </div>
+      
+        <CartWidget></CartWidget>
+      
     </Navbar>
   );
 }

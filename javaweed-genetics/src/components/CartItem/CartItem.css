@@ -1,0 +1,7 @@
+.cartitem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 300px;
+    width: 1000px;
+}

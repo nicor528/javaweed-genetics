@@ -11,3 +11,41 @@ git push -u origin master
 dummyapi
 
 important en css para pisar clases de bootstrap
+
+
+-----IMAGENES en PROYECTO-------------------------------------------------------------------------------------------------------------------------
+
+Una forma de resolverlo es hacer uso de la variable de ambiente q apunta a public (process.env.PUBLIC_URL) al momento de mostrar la .
+
+Para eso necesitas:
+
+1) En components/Datos/productos.js quitar la parte de “public\img\” en todos los objetos de Datos.
+
+2) Luego en componetns/catalogo/Item.js donde muestras la imagen (Card.Img) en src escribe:
+
+< Card.Img src={`${process.env.PUBLIC_URL}/${Traje.imagen}`} variant=“top” />
+
+
+
+Otra posibilidad es poner en Card.Img la ruta absoluta a tu repo, por ej así:
+
+https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/cuadros.jpg
+
+
+
+(con esta última forma, el paso #1 tendrás q realizarlo igual, pues solo debe quedar el nombre del archivo sin la ruta en Datos)
+
+(esta última es la forma preferida generalmente)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+https://www.sitepoint.com/event-bubbling-javascript/
+
+https://stackblitz.com/edit/react-bdb935?file=src%2FApp.js
+
+---------------------
+Ver redux!!!!
+
+-----------------------
+
+lottie react
+
