@@ -1,3 +1,10 @@
+import { collection, getDocs } from 'firebase/firestore'
+import {DB} from '../../Apis/Firebase'
+
+
+            
+
+
 export class products{
     constructor(id, productType, product, cost, stock, image, ciclovida, genetics, ){
         this.id = id;
@@ -65,16 +72,8 @@ const produ = [
     }
 ]
 
-const getData = new Promise((res,rej)=>{
-    if(true){
-        setTimeout(()=>{
-            console.log(productsList)
-            console.log(produ)
-            res(produ)
-        }, 2000);
-    }
-})
 
-export default getData;
+
+//export default getData;
 
 

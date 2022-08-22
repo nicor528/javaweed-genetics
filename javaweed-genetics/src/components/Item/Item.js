@@ -9,7 +9,6 @@ function Item({id, titulo, precio, stock, imagen}){
     const navegar = useNavigate();
     const verdetalle = () => {
        navegar(`/item/${id}`)
-       console.log(id)
     }
 
     return(

@@ -13,17 +13,12 @@ export default function CartCustomContext({ children }){
                     ...isProduct, cantidad: isProduct.cantidad + item.cantidad,
                 };
             }return isProduct;
-        }) : [...cart, {id: item.id, cantidad: item.cantidad, imagen: item.imagen, titulo: item.titulo }];
+        }) : [...cart, {id: item.id, cantidad: item.cantidad, imagen: item.Imagen, nombre: item.Nombre, precio: item.Precio }];
         setCart(inCart);
-        
-        console.log(inCart);
-        console.log(cart);
     }
 
     const removeItemCart = async (item) => {
-        console.log(item.id);
         const inCart = await cart.filter((isProduct) => isProduct.id != item.id);
-        console.log(inCart)
         setCart(inCart)
     }
 

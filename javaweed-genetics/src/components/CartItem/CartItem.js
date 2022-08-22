@@ -3,10 +3,8 @@ import { useContext, useState } from "react";
 
 export default function CartItem(props){
 
-
     let precio = parseInt(props.precio)
-    let cantidad = props.cantidad
-    console.log(precio)
+    let cantidad = props.quantity
     let precio_final = precio*cantidad;
 
     const remove = () =>{
@@ -15,9 +13,9 @@ export default function CartItem(props){
 
     return(
         <div className="cartitem">
-        <span> {props.titulo}</span>
-        <img width="200px" height="200px" src={`https://raw.githubusercontent.com/nicor528/javaweed-genetics/master/javaweed-genetics/public/img/${props.imagen}`} />
-        <span> Blister: {props.cantidad}</span>
+        <img width="100px" height="100px" src={`https://raw.githubusercontent.com/nicor528/javaweed-genetics/master/javaweed-genetics/public/img/${props.imagen}`} />
+        <span> {props.nombre}</span>
+        <span> Blisters: {props.quantity}</span>
         <span> Total: {precio_final}</span>
         <button onClick={remove} >X</button>
     </div>

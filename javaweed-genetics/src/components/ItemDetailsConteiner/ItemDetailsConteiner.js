@@ -1,19 +1,19 @@
 import "./ItemDetailsConteiner.css"
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import getData from '../Datos/Datos'
+//import getData from '../Datos/Datos'
 import ItemDetails from '../ItemDetails/ItemDetails';
 import ItemDescription from '../ItemDescription/ItemDescription';
+import { getDB } from "../../Apis/Firebase";
 
 
 function ItemDetailsConteiner() {
-    let totalproductos = [];
     const {iditem} = useParams();
     const [products, setProducts] = useState({})
-    console.log(iditem)
     let data;
+    let fullProducts;
 
-    useEffect(()=>{
+ /*   useEffect(()=>{
         async function infoProduct(){
             let id = iditem;
             await getData
@@ -24,7 +24,18 @@ function ItemDetailsConteiner() {
             setProducts(data)
         }    
         infoProduct();
-    }, [iditem])
+    }, [iditem])*/
+
+    useEffect(()=>{
+        let id = iditem;
+        async function getData(){
+            await getDB.then((resp)=> fullProducts = resp
+            ).catch(error =>  error)
+            data = await fullProducts.find(elemento => elemento.id == id)
+            setProducts(data)
+        }
+        getData();
+    },[iditem])
 
     return(
         <div className="itemdetailsconteiner">

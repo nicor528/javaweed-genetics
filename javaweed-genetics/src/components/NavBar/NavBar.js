@@ -7,20 +7,24 @@ import "../Logo/Logo.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
+import { useContext } from 'react';
+import { CartContext } from '../../Contexts/CartContext';
 
 function NavBar() {
 
+  const {cartData} = useContext(CartContext);
+
   const navegar = useNavigate()
   const goSativa = () => {
-    navegar(`/sativa`)
+    navegar(`/Sativa`)
   }
 
   const goIndica = () =>{
-    navegar(`/indica`)
+    navegar(`/Indica`)
   }
 
   const goHibridas = () => {
-    navegar(`/hibrida`)
+    navegar(`/Hibrida`)
   }
 
   const goHome = () => {
@@ -53,8 +57,8 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-      
-        <CartWidget></CartWidget>
+      {(cartData.length>0)?<CartWidget></CartWidget>:<Logo></Logo> }
+   
       
     </Navbar>
   );

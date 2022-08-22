@@ -16,10 +16,10 @@ export default function CartItemConteiner(){
         <div className="cartitemconteiner">
             
             {(cartData.length > 0)? cartData.map((item) => {
-                return <CartItem removeItem={remove} titulo={item.titulo} id={item.id} key={item.id} quantity={item.cantidad} precio={item.precio} imagen={item.imagen} ></CartItem>
+                return <CartItem removeItem={remove} nombre={item.nombre} id={item.id} key={item.id} quantity={item.cantidad} precio={item.precio} imagen={item.imagen} ></CartItem>
             } ) 
              : <span>No hay elentos en el carrito</span>}
-             <button onClick={cleanCart} >Borrar todos los elementos del carrito </button>
+             <button className="botonclean" onClick={cleanCart} >Borrar todos los elementos del carrito </button>
         </div>
     )
 }

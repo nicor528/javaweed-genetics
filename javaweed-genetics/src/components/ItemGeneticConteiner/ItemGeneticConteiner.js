@@ -1,8 +1,9 @@
 import "./ItemGeneticConteiner.css"
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import getData from '../Datos/Datos'
+//import getData from '../Datos/Datos'
 import ItemList from '../ItemList/ItemList'
+import { getDB } from "../../Apis/Firebase";
 
 function ItemGeneticsConteiner(){
     
@@ -11,7 +12,7 @@ function ItemGeneticsConteiner(){
     const [products, setProducts] = useState([]);
     let data;
     
-    useEffect(()=>{
+/*   useEffect(()=>{
         async function infoProduct(){
             let genetica = genetics.toString();
             console.log(genetica)
@@ -22,8 +23,20 @@ function ItemGeneticsConteiner(){
             setProducts(data)
         }    
         infoProduct();
-    }, [genetics])
+    }, [genetics])*/
     
+    useEffect(()=>{
+        let genetica = genetics;
+        let fullProducts;
+        async function getData(){
+            await getDB.then((resp)=> fullProducts = resp
+            ).catch(error =>  error)
+            data = await fullProducts.filter(elemento => elemento.Genetica == genetica)
+            setProducts(data)
+        }
+        getData();
+    }, [genetics])
+
     return(
         <div className="itemgeneticcontainer">
             <ItemList products={products}>
