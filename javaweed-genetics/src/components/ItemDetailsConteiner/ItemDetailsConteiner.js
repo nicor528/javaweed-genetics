@@ -4,14 +4,26 @@ import { useEffect, useState } from 'react';
 //import getData from '../Datos/Datos'
 import ItemDetails from '../ItemDetails/ItemDetails';
 import ItemDescription from '../ItemDescription/ItemDescription';
-import { getDB } from "../../Apis/Firebase";
+import {getDBbyID,} from "../../Apis/Firebase";
+
 
 
 function ItemDetailsConteiner() {
     const {iditem} = useParams();
     const [products, setProducts] = useState({})
-    let data;
-    let fullProducts;
+
+/*    const getDB_ID = new Promise((res,rej)=>{
+        const itemRef = doc(DB,'productos',iditem);
+        getDoc(itemRef).then(snapshot => {
+            if(snapshot.exists()){
+                const product = {
+                    id: snapshot.id,
+                    ...snapshot.data()
+                }
+                res(product)
+            }
+        }).catch(error => rej(console.log("Error", error)))
+    })*/
 
  /*   useEffect(()=>{
         async function infoProduct(){
@@ -26,7 +38,7 @@ function ItemDetailsConteiner() {
         infoProduct();
     }, [iditem])*/
 
-    useEffect(()=>{
+   /* useEffect(()=>{
         let id = iditem;
         async function getData(){
             await getDB.then((resp)=> fullProducts = resp
@@ -35,7 +47,21 @@ function ItemDetailsConteiner() {
             setProducts(data)
         }
         getData();
-    },[iditem])
+    },[iditem])*/
+/*
+    useEffect(()=>{
+        async function getData(){
+            await getDB_ID.then((res)=> data = res
+            ).catch(error => error)
+            setProducts(data)
+        }
+        getData()
+    },[iditem])*/
+
+    useEffect(()=>{
+        getDBbyID(iditem).then(res => setProducts(res)
+        ).catch(error => console.log(error))
+    }, [iditem])
 
     return(
         <div className="itemdetailsconteiner">

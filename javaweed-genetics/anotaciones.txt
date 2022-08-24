@@ -57,4 +57,35 @@ dealy.dev
 
 abya para viciar
 
+-------
+
+vercel.com /para subir la pagina
+
+--------
+
+netlifly / igual que arriba
+
+--------
+
+
+run build / para armar el archivo y subirlo al server. (crea la carpeta build)
+
+----------------
+https://imgur.com/
+
+para guardar imagenes
+
+-----------------------------
+
+patrones de diseño (estudiarlos)
+
+--------------------------------
+spiners de cargando:
+https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje
+
+---------------------------------------
+repo clase Firebase 2 / desafio 11
+https://github.com/alexmarinmendez/repaso2-react
+
+
 

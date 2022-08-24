@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Home from './pages/Home'
 import ItemDetails from './pages/ItemDetails'
 import ItemGenetics from './pages/ItemGenetics'
@@ -7,8 +7,26 @@ import Cart from './pages/Cart';
 import CartCustomContext from "./Contexts/CartContext";
 
 
+// Import the functions you need from the SDKs you need
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+
+
+// Initialize Firebase
+
 
 function App() {
+  
+  useEffect(()=>{
+
+    
+    
+  },[])
+  
+  
   return (
     <div>
     <CartCustomContext>

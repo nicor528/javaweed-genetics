@@ -1,7 +1,9 @@
 import {
     getFirestore,
     collection,
-    getDocs
+    getDocs,
+    doc,
+    getDoc
     } from 'firebase/firestore'
 
 import { initializeApp } from "firebase/app";
@@ -16,7 +18,7 @@ const firebaseConfig = {
   };
 
 const app = initializeApp(firebaseConfig);
-const DB = getFirestore(app);
+export const DB = getFirestore(app);
 export const getDB = new Promise((res,rej) => {
     const colRef = collection(DB,'productos')
     getDocs(colRef).then((snapshot)=>{
@@ -31,6 +33,36 @@ export const getDB = new Promise((res,rej) => {
         rej(console.log("Error al traer los productos", error))})
     }
 )
+
+export const getDB_ID1 = async (id) => {
+    const itemRef = await doc(DB,'productos', id);
+    await getDoc(itemRef).then(snapshot =>{
+        if(snapshot.exists()){
+            const product = {
+                id: snapshot.id,
+                ...snapshot.data()
+            }
+        console.log(product);
+        return (product);
+        }
+    }).catch(error => {return(console.log("Error al traer los productos", error))})
+}
+
+export const getDBbyID = async (id) =>{
+    const itemRef = await doc(DB,'productos', id);
+    return(
+        new Promise((res, rej) =>{
+            getDoc(itemRef).then(snapshot =>{
+                if(snapshot.exists()){
+                    const product = {
+                        id: snapshot.id,
+                        ...snapshot.data()
+                    }
+                    res(product)}
+            }).catch(error => rej(error) )
+        })
+    )
+}
 
 
 
