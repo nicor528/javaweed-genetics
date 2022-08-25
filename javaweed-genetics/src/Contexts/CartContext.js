@@ -13,7 +13,7 @@ export default function CartCustomContext({ children }){
                     ...isProduct, cantidad: isProduct.cantidad + item.cantidad,
                 };
             }return isProduct;
-        }) : [...cart, {id: item.id, cantidad: item.cantidad, imagen: item.Imagen, nombre: item.Nombre, precio: item.Precio }];
+        }) : [...cart, {id: item.id, cantidad: item.cantidad, imagen: item.imagen, nombre: item.nombre, valor: item.valor  }];
         setCart(inCart);
     }
 

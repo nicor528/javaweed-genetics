@@ -1,10 +1,10 @@
 import './ItemDescription.css'
 
-export default function ItemDescription({Ciclovida, Porcentajes}){
+export default function ItemDescription({ciclovida, porcentajes}){
     return(
         <div className="description">
-            <li>Ciclo de vida de la planta: {Ciclovida}</li>
-            <li>{Porcentajes} </li>
+            <li>Ciclo de vida de la planta: {ciclovida}</li>
+            <li>{porcentajes} </li>
             <li>Relevando demas detalles de los productos</li>
         </div>
     )

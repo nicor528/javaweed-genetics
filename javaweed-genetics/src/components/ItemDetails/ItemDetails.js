@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../Contexts/CartContext';
 
 
-function ItemDetails({Nombre, Imagen, Precio, Stock, id}){
+function ItemDetails({nombre, imagen, valor, stock, id}){
 
     const {addItemToCart} = useContext(CartContext);
 
@@ -12,19 +12,18 @@ function ItemDetails({Nombre, Imagen, Precio, Stock, id}){
         addItemToCart({
             id: id,
             cantidad : quantity,
-            Imagen: Imagen,
-            Precio : Precio,
-            Nombre: Nombre,
+            imagen: imagen,
+            valor : valor,
+            nombre: nombre,
         })
     }
 
-
     return(
         <div className="itemdetails">
-        <span> {Nombre}</span>
-        <img width="200px" height="200px" src={`https://raw.githubusercontent.com/nicor528/javaweed-genetics/master/javaweed-genetics/public/img/${Imagen}`} />
-        <span> Valor del blister: $ {Precio}  </span>
-        <ItemCount Stock={Stock} addItem={addQuantityToCart}  />
+        <span> {nombre}</span>
+        <img width="200px" height="200px" src={`https://raw.githubusercontent.com/nicor528/javaweed-genetics/master/javaweed-genetics/public/img/${imagen}`} />
+        <span> Valor del blister: $ {valor}  </span>
+        <ItemCount Stock={stock} addItem={addQuantityToCart}  />
         </div>
     )
 }

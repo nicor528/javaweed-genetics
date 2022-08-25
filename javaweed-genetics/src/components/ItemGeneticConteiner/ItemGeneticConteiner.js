@@ -31,7 +31,7 @@ function ItemGeneticsConteiner(){
         async function getData(){
             await getDB.then((resp)=> fullProducts = resp
             ).catch(error =>  error)
-            data = await fullProducts.filter(elemento => elemento.Genetica == genetica)
+            data = await fullProducts.filter(elemento => elemento.genetica == genetica)
             setProducts(data)
         }
         getData();

@@ -10,10 +10,10 @@ function ItemList({products}){
                     <Item
                         key={data.id}
                         id = {data.id}
-                        titulo = {data.Nombre}
-                        precio = {data.Precio}
-                        stock = {data.Stock}
-                        imagen = {data.Imagen}
+                        titulo = {data.nombre}
+                        precio = {data.precio}
+                        stock = {data.stock}
+                        imagen = {data.imagen}
                     />
                 )})}
         </div>

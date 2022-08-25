@@ -12,11 +12,12 @@ export default function CartItemConteiner(){
         removeItemCart({id})
         }
 
+    console.log(cartData)
     return(
         <div className="cartitemconteiner">
             
             {(cartData.length > 0)? cartData.map((item) => {
-                return <CartItem removeItem={remove} nombre={item.nombre} id={item.id} key={item.id} quantity={item.cantidad} precio={item.precio} imagen={item.imagen} ></CartItem>
+                return <CartItem removeItem={remove} nombre={item.nombre} id={item.id} key={item.id} cantidad={item.cantidad} valor={item.valor} imagen={item.imagen} ></CartItem>
             } ) 
              : <span>No hay elentos en el carrito</span>}
              <button className="botonclean" onClick={cleanCart} >Borrar todos los elementos del carrito </button>

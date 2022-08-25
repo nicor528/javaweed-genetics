@@ -1,12 +1,16 @@
 .itemlistcontainer{
     margin-top: 0px;
-   
-    display: flex;
     border-width: 5px;
     border-color: #f00;
     border-style: solid;
-    width: 1000px;
-    height: 500px;
+    width: 1500px;
+    height: 1500px;
+    /*display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-content: flex-start;
+    align-items: flex-start;*/
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
 }

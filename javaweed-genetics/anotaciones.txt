@@ -87,5 +87,16 @@ https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje
 repo clase Firebase 2 / desafio 11
 https://github.com/alexmarinmendez/repaso2-react
 
+----------------------------------------------------
+data util
+
+ https://firebase.google.com/docs/firestore/manage-data/transactions
+
+ https://danielyxie.github.io/bitburner/
+
+https://www.mercadopago.com.ar/developers/es
+
+
+-------------------------------------------------------
 
 

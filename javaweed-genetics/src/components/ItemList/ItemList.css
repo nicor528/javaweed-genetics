@@ -3,9 +3,12 @@
     padding-right: 0px;
     padding-bottom: 50px;
     padding-left: 10px;
-    width: 1200px;
-    height: 500px;
+    width: 1500px;
+    height: 1500px;
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    /*align-content: center;
+    justify-content: space-around;*/
+    /*align-content: flex-end;
+    justify-content: space-around;*/
 }
