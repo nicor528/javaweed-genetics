@@ -3,7 +3,12 @@ import {
     collection,
     getDocs,
     doc,
-    getDoc
+    getDoc,
+    query,
+    where,
+    addDoc,
+    updateDoc,
+    increment
     } from 'firebase/firestore'
 
 import { initializeApp } from "firebase/app";
@@ -65,4 +70,54 @@ export const getDBbyID = async (id) =>{
 }
 
 
+export const getDBbyID1 = async (id) =>{
+    const itemRef = await doc(DB,'productos', id);
+    return(
+        new Promise((res, rej) =>{
+            getDoc(itemRef).then(snapshot =>{
+                if(snapshot.exists()){
+                    const product = {
+                        id: snapshot.id,
+                        ...snapshot.data()
+                    }
+                    res(product)}
+            }).catch(error => rej(error) )
+        })
+    )
+}
+
+export const getDBbyGenetics = async (genetics) => {
+    const itemRef = await query(
+        collection(DB,'productos'),
+        where('Genetica','==', genetics));
+    return(
+        new Promise((res,rej) => {
+            getDocs(itemRef).then(snapshot=>{
+                if(snapshot.exists()){
+                    const productos = snapshot.map(item => {
+                        return{
+                            id: item.id,
+                            ...item.data()
+                        }
+                    })
+                    res(productos)
+                }
+            }).catch(error=>{
+                rej(console.log("Error", error))
+            })
+        })
+    )
+    
+}
+
+export const updateStock = async (item) => {
+    item.forEach(item => {
+        const docRef = doc(DB, "productos", item.id)
+        updateDoc(docRef, {
+            stock: increment(-(item.cantidad))
+        })
+    })
+
+
+}
 

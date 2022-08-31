@@ -1,0 +1,12 @@
+.cartcost{
+    margin-top: 5px;
+    height: 200px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}

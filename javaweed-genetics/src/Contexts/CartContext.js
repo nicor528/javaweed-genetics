@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import React, { useState } from "react";
+import { DB, updateStock } from "../Apis/Firebase";
 
 export const CartContext = React.createContext([]);
 
@@ -25,10 +27,48 @@ export default function CartCustomContext({ children }){
     const cleanCart = () => {
         setCart([])
     }
+
+    const totalAPagar = (item) => {
+        let total = 0;
+        item.forEach(element => {
+            let totalItem = parseInt(element.cantidad) * parseInt(element.valor) ;
+            total = total + totalItem
+        });
+        return parseInt(total);
+    }
+
+    const makeBuyOrder = async (item, Buyer) => {
+        let items
+        items = await cart.map(cart => ({
+            ...items, id: cart.id,
+            nombre: cart.nombre,
+            cantidad: cart.cantidad,
+            valor: cart.valor
+        }))
+    
+        let order = {
+            buyer: Buyer,
+            items: items,
+            total: totalAPagar(cart),
+            date: serverTimestamp()
+        }
+
+
+        const createOrder = (order) => {
+            const orderColection = collection(DB, "compras")
+            addDoc(orderColection, order).then(({id}) => console.log({id}))
+            .catch(error => console.log(error)) 
+        } 
+
+        await createOrder(order);
+        await updateStock(cart);
+        await cleanCart();
+        
+    }
     
 
     return(
-        <CartContext.Provider value={{addItemToCart, removeItemCart, cleanCart , cartData: cart}}>
+        <CartContext.Provider value={{makeBuyOrder, totalAPagar, addItemToCart, removeItemCart, cleanCart , cartData: cart}}>
             {children}
         </CartContext.Provider>
     )

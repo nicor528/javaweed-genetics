@@ -98,5 +98,7 @@ https://www.mercadopago.com.ar/developers/es
 
 
 -------------------------------------------------------
+un backoffice para agregar productos
 
+https://stackblitz.com/edit/react-kgnwxu
 
