@@ -37,7 +37,7 @@ export default function CartCustomContext({ children }){
         return parseInt(total);
     }
 
-    const makeBuyOrder = async (item, Buyer) => {
+    const makeBuyOrder = async (Buyer) => {
         let items
         items = await cart.map(cart => ({
             ...items, id: cart.id,
@@ -56,7 +56,7 @@ export default function CartCustomContext({ children }){
 
         const createOrder = (order) => {
             const orderColection = collection(DB, "compras")
-            addDoc(orderColection, order).then(({id}) => console.log({id}))
+            addDoc(orderColection, order).then(({id}) => alert("El codigo de su compra es: " + id))
             .catch(error => console.log(error)) 
         } 
 

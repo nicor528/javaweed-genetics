@@ -1,11 +1,11 @@
 import NavBar from '../components/NavBar/NavBar'
-import ItemGeneticConteiner from '../components/ItemGeneticConteiner/ItemGeneticConteiner'
+import CardsGeneticsConteiner from '../components/CardsGeneticsConteiner/CardsGeneticsConteiner'
 
 export default function ItemGenetics(){
     return(
         <div> 
         <NavBar></NavBar>
-        <ItemGeneticConteiner></ItemGeneticConteiner>
+        <CardsGeneticsConteiner></CardsGeneticsConteiner>
         </div>
     )
 }

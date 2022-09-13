@@ -1,13 +1,15 @@
-import { Button } from "bootstrap"
-import { useContext} from "react"
+import { useContext, useState} from "react"
 import { CartContext } from "../../Contexts/CartContext"
 import CartCost from "../CartCost/CartCost"
 import CartItem from "../CartItem/CartItem"
+import Forms from "../Forms/Forms"
 import './CartItemConteiner.css'
 
 export default function CartItemConteiner(){
 
     const {cartData, removeItemCart, cleanCart, totalAPagar, makeBuyOrder} = useContext(CartContext)
+
+    const [mostrar, setMostrar] = useState(false)
 
     function Button(){
         return <button className="botonclean" onClick={cleanCart} >Borrar todos los elementos del carrito </button>
@@ -15,16 +17,14 @@ export default function CartItemConteiner(){
 
     const remove = (id) => { 
         removeItemCart({id})
-        }
+    }
 
-    function order (cartData) {
-        const Buyer = {
-            name: prompt("Ingrese su Nombre y Apellido"),
-            phone: prompt("Ingrese su numero de telefono"),
-            email: prompt("Ingrese su Email")
-        }
+    const show = () =>{
+        setMostrar(true)
+    }
 
-        makeBuyOrder(cartData, Buyer)
+    const order = async () => {
+        setMostrar(false)
     }
 
     return(
@@ -36,8 +36,9 @@ export default function CartItemConteiner(){
             } ) 
              : <span>No hay elentos en el carrito</span>}
             {(cartData.length > 0)? <CartCost precioFinal={totalAPagar(cartData)} Order={order}></CartCost> : <></> }
-            {(cartData.length > 0)? <button onClick={order} > Confirmar Compra </button>: <></>}
+            {(cartData.length > 0)? <button onClick={show} > Confirmar Compra </button>: <></>}
             {(cartData.length > 0)? <Button/> : <></>}
+            {(mostrar) ? <Forms mostrar={mostrar}></Forms> : <></> }
         </div>
     )
 }

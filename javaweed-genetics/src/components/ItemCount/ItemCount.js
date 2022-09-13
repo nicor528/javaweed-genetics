@@ -1,6 +1,6 @@
 import './ItemCount.css'
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useState} from "react";
+import { Link} from 'react-router-dom';
 
 function ItemCount({Stock, addItem}){
 
@@ -11,7 +11,7 @@ function ItemCount({Stock, addItem}){
 
     function sumar_contador(){
         if (contador < stock) {
-            setContador(contador + 1)    
+            setContador(contador + 1)
         }
         
     }
@@ -30,8 +30,16 @@ function ItemCount({Stock, addItem}){
         }   }
 
 
- 
-    if(!agregado){
+    if(stock < 1){
+        return (
+            <div className="alert">
+            <span>En estos momentos no contamos con Stock de este producto.</span>
+            </div>
+        )
+    }
+
+
+    if(!agregado && stock >= 1 ){
     return(
         <div className="itemcount" >
             
@@ -43,9 +51,9 @@ function ItemCount({Stock, addItem}){
             
         </div>
     )}
-    else{
+    if(agregado){
         return(
-            <Link to='/cart'>Ir al carrito</Link>
+            <Link className='link' to='/cart'>Ir al carrito</Link>
         )
     }
 }

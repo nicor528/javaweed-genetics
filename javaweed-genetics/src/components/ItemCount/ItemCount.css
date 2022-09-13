@@ -1,6 +1,15 @@
+.link{
+    margin-top: 500px;
+    margin-left: 190px;
+}
+
+.alert{
+    margin-left: 0px;
+}
+
 .itemcount2{
     
-  
+   
     background-color: white;
     color: black;
   
@@ -9,6 +18,8 @@
 }
 
 .itemcount{
+    margin-top: 100px;
+    margin-left: 190px;
     display:flex;
     
 

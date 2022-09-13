@@ -13,13 +13,17 @@ import {
 
 import { initializeApp } from "firebase/app";
 
+
+
+console.log(process.env.REACT_APP_apKey)
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDNbRrotato6wMlTNwEU1VePOUcJNf2oPA",
-    authDomain: "javaweed-genetics.firebaseapp.com",
-    projectId: "javaweed-genetics",
-    storageBucket: "javaweed-genetics.appspot.com",
-    messagingSenderId: "449700369382",
-    appId: "1:449700369382:web:33761c5bad4f86b1817c27"
+    apiKey: process.env.REACT_APP_apKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
   };
 
 const app = initializeApp(firebaseConfig);
